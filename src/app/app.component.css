@@ -1,0 +1,43 @@
+.container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+.video-container {
+    position: absolute;
+    background-color: black;
+    bottom: 50px;
+    top:0;
+    left: 0;
+    right: 0;
+}
+
+video {
+    height: 100%;
+}
+
+.controls {
+    position: absolute;
+    bottom:0;
+    height: 45px;
+    background-color: coral;
+    left: 0;
+    right: 0;
+}
+
+.bar {
+    position: absolute;
+    height: 5px;
+    bottom: 45px;
+    left: 0;
+    right: 0;
+    background-color: #999999;
+}
+
+.bar-indicator {
+    background-color: #24f;
+    height: 5px;
+}
