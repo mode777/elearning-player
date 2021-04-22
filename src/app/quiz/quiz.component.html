@@ -1,0 +1,6 @@
+<div *ngIf="quiz" class="quiz-container">
+  <h1>{{quiz.title}}</h1>
+  <ng-container *ngFor="let question of quiz.questions" >
+    <question [model]="question"></question>
+  </ng-container>
+</div>

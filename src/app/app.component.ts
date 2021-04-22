@@ -1,4 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { servicesVersion } from 'typescript';
+import { ELearningService } from './e-learning.service';
+import { QuizModalComponent } from './quiz-modal/quiz-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -7,28 +11,9 @@ import { Component, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   title = 'elearning-player';
-  @ViewChild('video') videoRef;   
-  public get video() : HTMLVideoElement { return this.videoRef.nativeElement }
-  
-  public playText = "Play"
-  public time = 0
-  public duration = 0
+  $json = this.service.load("assets/example.json")
 
-  togglePlay(){
-    if (this.video.paused || this.video.ended) {
-      this.video.play();
-      this.playText = "Pause"
-    } else {
-      this.video.pause();
-      this.playText = "Play";
-    }
-  }
+  constructor(private service: ELearningService){
 
-  videoLoaded(){
-    this.duration= this.video.duration
-  }
-
-  onUpdate(ev){
-    this.time = this.video.currentTime
   }
 }

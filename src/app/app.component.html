@@ -1,14 +1,1 @@
-<div class="container">
-  <div class="video-container">
-    <video #video preload="metadata" poster="assets/poster.jpg" (timeupdate)="onUpdate($event)" (loadedmetadata)="videoLoaded()">
-      <source src="assets/video.mp4" type="video/mp4"/>
-    </video>
-  </div>
-  <div class="bar">
-    <div class="bar-indicator" [ngStyle]="{'width': ((time / duration)*100) + '%'}"></div>
-  </div>
-  <div class="controls">
-    <button (click)="togglePlay()">{{playText}}</button>
-    <span>{{time}}</span>
-  </div>
-</div>
+<player [model]="$json | async"></player>

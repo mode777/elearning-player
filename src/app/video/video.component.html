@@ -1,0 +1,4 @@
+<!-- <video #video preload="metadata" poster="assets/poster.jpg" (timeupdate)="onUpdate($event)" (loadedmetadata)="videoLoaded()"> -->
+<video #video preload="metadata" (timeupdate)="onUpdate($event)" >
+  <source [src]="src" type="video/mp4"/>
+</video>

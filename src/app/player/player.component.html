@@ -1,0 +1,19 @@
+<div class="header">
+  {{title}} - {{item.title}} ({{itemIndex+1}}/{{content.length}})
+</div>
+<div class="content-container">
+  <container-element [ngSwitch]="item.type">
+    <app-video *ngSwitchCase="'video'" [model]="item" [playing]="isPlaying" (progress)="progress=$event" (finished)="contentFinished()"></app-video>
+    <quiz *ngSwitchCase="'quiz'" [model]="item" (progress)="progress=$event" (finished)="contentFinished()"></quiz>
+    <h1 *ngSwitchDefault>Unsupported Content</h1>
+  </container-element>
+</div>
+<div class="bar">
+  <div class="bar-indicator" [ngStyle]="{'width': (progress*100) + '%'}"></div>
+</div>
+<div class="controls">
+  <button [disabled]="isContentFinished || isPlaying" (click)="isPlaying = true">Play</button>
+  <button [disabled]="isContentFinished || !isPlaying" (click)="isPlaying = false">Pause</button>
+  <button [disabled]="itemIndex == 0" (click)="prev()">Prev</button>
+  <button [disabled]="itemIndex == content.length-1" (click)="next()">Next</button>
+</div>

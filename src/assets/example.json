@@ -1,0 +1,12 @@
+{
+  "title": "Test Content",
+  "content": [
+    { "type": "video", "src":"assets/video.mp4", "title": "Chapter 1", "end": 10 },
+    { "type": "video", "src":"assets/video.mp4", "title": "Chapter 2", "start": 10, "end": 20 },
+    { "type": "quiz", "title": "Quiz for Chapter 2", "questions": [
+      { "question": "The bunny is...", "options": ["...big","...stupid","...evil"], "answers": [1,2] },
+      { "question": "Whats the name of the trailer...", "options": ["Big Buck Bunny","Big Blue Baldie","Brave Boy Benny"], "answers": [1] }
+    ] },
+    { "type": "video", "src":"assets/video.mp4", "title": "Chapter 3", "start": 20 }
+  ]
+}

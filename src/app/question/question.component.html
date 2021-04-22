@@ -1,0 +1,7 @@
+<ng-container *ngIf="question">
+  <h2>{{question.question}}</h2>
+  <ng-container *ngFor="let option of question.options">
+    <h3>{{option}}</h3>
+  </ng-container>
+
+</ng-container>
